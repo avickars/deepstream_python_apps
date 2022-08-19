@@ -208,6 +208,28 @@ namespace pydeepstream {
                      },
                      py::return_value_policy::reference,
                      pydsdoc::NvOSD::RectParamsDoc::cast);
+        
+        py::class_<NvOSD_MaskParams>(m, "NvOSD_MaskParams",
+                                     pydsdoc::NvOSD::RectParamsDoc::descr)
+                .def(py::init<>())
+                .def_readwrite("data", &NvOSD_MaskParams::data)
+                .def_readwrite("size", &NvOSD_MaskParams::size)
+                .def_readwrite("theshold", &NvOSD_MaskParams::theshold)
+                .def_readwrite("width", &NvOSD_MaskParams::width)
+                .def_readwrite("height", &NvOSD_MaskParams::height)
+                .def("cast",
+                     [](void *data) {
+                         return (NvOSD_MaskParams *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvOSD::RectParamsDoc::cast)
+
+                .def("cast",
+                     [](size_t data) {
+                         return (NvOSD_MaskParams *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvOSD::RectParamsDoc::cast);
 
 
         py::class_<NvOSD_LineParams>(m, "NvOSD_LineParams",
