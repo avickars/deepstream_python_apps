@@ -301,17 +301,7 @@ namespace pydeepstream {
                 .def_readwrite("tracker_confidence",
                                &NvDsObjectMeta::tracker_confidence)
                 .def_readwrite("rect_params", &NvDsObjectMeta::rect_params)
-            	.def_property_readonly("mask_params", [](NvDsObjectMeta &self) -> py::array {
-				                  auto dtype = py::dtype(
-				                          py::format_descriptor<float>::format());
-				                  auto base = py::array(dtype,
-				                                        {self.mask_params.size},
-				                                        {sizeof(float)});
-				                  return py::array(dtype, {self.mask_params.size},
-				                                   {sizeof(float)},
-				                                   self.mask_params.data, base);
-				              })
-//                 .def_readwrite("mask_params", &NvDsObjectMeta::mask_params)
+                .def_readwrite("mask_params", &NvDsObjectMeta::mask_params)
                 .def_readwrite("text_params", &NvDsObjectMeta::text_params)
 
                 .def("cast",
