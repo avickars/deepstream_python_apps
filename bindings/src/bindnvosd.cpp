@@ -214,7 +214,7 @@ namespace pydeepstream {
                 .def(py::init<>())
                 .def_readwrite("data", &NvOSD_MaskParams::data)
                 .def_readwrite("size", &NvOSD_MaskParams::size)
-                .def_readwrite("theshold", &NvOSD_MaskParams::theshold)
+                .def_readwrite("threshold", &NvOSD_MaskParams::threshold)
                 .def_readwrite("width", &NvOSD_MaskParams::width)
                 .def_readwrite("height", &NvOSD_MaskParams::height)
                 .def("cast",
