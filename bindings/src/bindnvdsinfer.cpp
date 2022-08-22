@@ -168,7 +168,7 @@ namespace pydeepstream {
                      pydsdoc::NvInferDoc::NvDsInferObjectDetectionInfoDoc::cast);
 
         py::class_<NvDsInferInstanceMaskInfo>(m, "NvDsInferInstanceMaskInfo",
-                                                 pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::descr)
+                                                 pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfoDoc::descr)
                 .def(py::init<>())
                 .def_readwrite("classId",
                                &NvDsInferInstanceMaskInfo::classId)
@@ -191,14 +191,14 @@ namespace pydeepstream {
                          return (NvDsInferInstanceMaskInfo *) data;
                      },
                      py::return_value_policy::reference,
-                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::cast)
+                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfoDoc::cast)
 
                 .def("cast",
                      [](size_t data) {
                          return (NvDsInferInstanceMaskInfo *) data;
                      },
                      py::return_value_policy::reference,
-                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::cast);
+                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfoDoc::cast);
 
 
         py::class_<NvDsInferAttribute>(m, "NvDsInferAttribute",
