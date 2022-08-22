@@ -1412,6 +1412,25 @@ namespace pydsdoc
             constexpr const char* cast=R"pyds(cast given object/data to :class:`NvDsInferObjectDetectionInfo`, call pyds.NvDsInferObjectDetectionInfo.cast(data))pyds";
         }
 
+        namespace  NvDsInferInstanceMaskInfoDoc
+        {
+            constexpr const char* descr = R"pyds(
+                Holds information about one parsed object from mask detector's output.
+
+                :ivar classId: *int*, ID of the class to which the object belongs.
+                :ivar left: *float*, Horizontal offset of the bounding box shape for the object.
+                :ivar top: *float*, Vertical offset of the bounding box shape for the object.
+                :ivar width: *float*, Width of the bounding box shape for the object.
+                :ivar height: *float*, Height of the bounding box shape for the object.
+                :ivar detectionConfidence: *float*, Object detection confidence. Should be a float value in the range [0.0,1.0].
+                :ivar mask: *float**, Object Mask.
+                :ivar mask_width: *float*, Mask height.
+                :ivar mask_height: *float*, Mask Width.
+                :ivar mask_size: *float*, Mask size.)pyds";
+
+            constexpr const char* cast=R"pyds(cast given object/data to :class:`NvDsInferInstanceMaskInfo`, call pyds.NvDsInferInstanceMaskInfo.cast(data))pyds";
+        }
+
         namespace NvDsInferAttributeDoc
         {
             constexpr const char* descr = R"pyds(
