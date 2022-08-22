@@ -167,6 +167,39 @@ namespace pydeepstream {
                      py::return_value_policy::reference,
                      pydsdoc::NvInferDoc::NvDsInferObjectDetectionInfoDoc::cast);
 
+        py::class_<NvDsInferInstanceMaskInfo>(m, "NvDsInferInstanceMaskInfo",
+                                                 pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::descr)
+                .def(py::init<>())
+                .def_readwrite("classId",
+                               &NvDsInferInstanceMaskInfo::classId)
+                .def_readwrite("left", &NvDsInferInstanceMaskInfo::left)
+                .def_readwrite("top", &NvDsInferInstanceMaskInfo::top)
+                .def_readwrite("width", &NvDsInferInstanceMaskInfo::width)
+                .def_readwrite("height", &NvDsInferInstanceMaskInfo::height)
+                .def_readwrite("detectionConfidence",
+                               &NvDsInferInstanceMaskInfo::detectionConfidence)
+                .def_readwrite("mask",
+                               &NvDsInferInstanceMaskInfo::mask)
+                .def_readwrite("mask_width",
+                               &NvDsInferInstanceMaskInfo::mask)
+                .def_readwrite("mask_height",
+                       &NvDsInferInstanceMaskInfo::mask)
+                .def_readwrite("mask_size",
+                               &NvDsInferInstanceMaskInfo::mask)
+                .def("cast",
+                     [](void *data) {
+                         return (NvDsInferInstanceMaskInfo *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::cast)
+
+                .def("cast",
+                     [](size_t data) {
+                         return (NvDsInferInstanceMaskInfo *) data;
+                     },
+                     py::return_value_policy::reference,
+                     pydsdoc::NvInferDoc::NvDsInferInstanceMaskInfo::cast);
+
 
         py::class_<NvDsInferAttribute>(m, "NvDsInferAttribute",
                                        pydsdoc::NvInferDoc::NvDsInferAttributeDoc::descr)
